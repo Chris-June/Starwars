@@ -1,0 +1,208 @@
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+/* Glow effect for text */
+.glow-text {
+  text-shadow: 0 0 8px rgba(0, 153, 255, 0.8);
+}
+
+/* Glow effect for inputs */
+.glow-input {
+  box-shadow: 0 0 8px rgba(0, 153, 255, 0.8);
+}
+
+/* Apply gradient and glow to options */
+select.glow-input option {
+  background: #1a1f2e; /* Dark background */
+  color: var(--color-text);
+}
+
+/* Ensure other existing styles are included */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+:root {
+  --font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-family);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .sidebar {
+    @apply bg-gradient-to-br from-gray-900 to-gray-800;
+    @apply text-gray-100;
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .prose {
+    @apply text-gray-100;
+  }
+
+  .prose p {
+    @apply mb-4;
+  }
+
+  .text-display {
+    @apply flex-grow p-4;
+    @apply bg-gradient-to-br from-gray-800/90 to-gray-900/90;
+    @apply text-gray-100;
+    @apply overflow-y-auto;
+    @apply relative;
+    @apply h-[calc(100vh-4rem)];
+    @apply max-w-[calc(100vw-5rem)];
+    @apply rounded-xl;
+    @apply shadow-xl;
+    @apply backdrop-blur-sm;
+  }
+
+  .text-content {
+    @apply w-full h-full p-6;
+    @apply bg-gradient-to-br from-gray-800/50 to-gray-900/50;
+    @apply rounded-lg;
+    @apply overflow-y-auto;
+    @apply shadow-inner;
+  }
+
+  .story-input {
+    @apply w-full p-6;
+    @apply bg-transparent;
+    @apply rounded-lg;
+    @apply outline-none;
+    @apply min-h-[200px];
+    @apply text-lg leading-7;
+    @apply transition-all duration-200;
+    @apply font-sans;
+    @apply tracking-wide;
+  }
+
+  .story-input:focus {
+    @apply outline-none;
+    @apply font-sans;
+    @apply tracking-wide;
+  }
+
+  .typing-indicator {
+    @apply fixed bottom-6 right-6;
+    @apply flex items-center space-x-1;
+    @apply bg-gray-800/90 backdrop-blur-sm;
+    @apply px-3 py-2 rounded-full;
+    @apply shadow-lg;
+    @apply bg-gray-800/90 backdrop-blur-sm;
+    @apply px-3 py-2 rounded-full;
+    @apply shadow-lg;
+  }
+
+  .typing-indicator .dot {
+    @apply w-2 h-2 bg-blue-400 rounded-full;
+    animation: bounce 0.5s infinite alternate;
+  }
+
+  .typing-indicator .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing-indicator .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+.loading-indicator {
+  @apply flex items-center justify-center space-x-2;
+}
+
+.loading-dot {
+  @apply w-2 h-2 bg-blue-500 rounded-full;
+  animation: bounce 0.5s infinite alternate;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.slider {
+  @apply w-full h-2;
+  @apply bg-blue-600/50;
+  @apply rounded-full;
+  @apply outline-none;
+  @apply transition-opacity duration-200;
+  @apply appearance-none;
+}
+
+.slider:hover {
+  @apply opacity-100;
+}
+
+.slider::-webkit-slider-thumb {
+  @apply appearance-none;
+  @apply w-4 h-4;
+  @apply bg-blue-500;
+  @apply rounded-full;
+  @apply cursor-pointer;
+  @apply shadow-lg;
+  @apply transition-transform duration-200;
+  @apply hover:scale-110;
+}
+
+.slider::-moz-range-thumb {
+  @apply w-4 h-4;
+  @apply bg-blue-500;
+  @apply rounded-full;
+  @apply cursor-pointer;
+  @apply shadow-lg;
+  @apply transition-transform duration-200;
+  @apply hover:scale-110;
+}
+
+.editable-div[contenteditable]:empty:before {
+  content: attr(data-placeholder);
+  color: rgba(156, 163, 175, 0.5);
+  font-style: italic;
+}

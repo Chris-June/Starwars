@@ -1,0 +1,108 @@
+export const heroes = [
+	"Luke Skywalker",
+	"Leia Organa",
+	"Han Solo",
+	"Rey",
+	"Finn",
+	"Poe Dameron",
+	"Anakin Skywalker",
+	"Obi-Wan Kenobi",
+	"Ahsoka Tano",
+	"Yoda",
+	"Qui-Gon Jinn",
+	"Mace Windu",
+	"Padmé Amidala",
+	"Lando Calrissian",
+	"Chewbacca",
+	"Jyn Erso",
+	"Cassian Andor",
+	"Hera Syndulla",
+	"Kanan Jarrus",
+	"Ezra Bridger",
+	"Sabine Wren",
+	"Bo-Katan Kryze",
+];
+
+export const villains = [
+	"Darth Vader",
+	"Emperor Palpatine",
+	"Kylo Ren",
+	"Count Dooku",
+	"General Grievous",
+	"Darth Maul",
+	"Snoke",
+	"Grand Admiral Thrawn",
+	"Moff Gideon",
+	"Asajj Ventress",
+	"Savage Opress",
+	"Gar Saxon",
+];
+
+export const droids = [
+	"R2-D2",
+	"C-3PO",
+	"BB-8",
+	"K-2SO",
+	"IG-11",
+	"L3-37",
+	"Chopper",
+	"HK-47",
+	"BD-1",
+];
+
+export const bountyHunters = [
+	"Boba Fett",
+	"Jango Fett",
+	"Cad Bane",
+	"Bossk",
+	"Dengar",
+	"IG-88",
+	"Zuckuss",
+	"4-LOM",
+	"Aurra Sing",
+	"Embo",
+	"Fennec Shand",
+];
+
+export const jedi = [
+	"Luke Skywalker",
+	"Leia Organa",
+	"Rey",
+	"Anakin Skywalker",
+	"Obi-Wan Kenobi",
+	"Ahsoka Tano",
+	"Yoda",
+	"Qui-Gon Jinn",
+	"Mace Windu",
+	"Kit Fisto",
+	"Plo Koon",
+	"Shaak Ti",
+	"Luminara Unduli",
+	"Barriss Offee",
+	"Aayla Secura",
+	"Ki-Adi-Mundi",
+	"Depa Billaba",
+	"Jocasta Nu",
+];
+
+export const sith = [
+	"Darth Vader",
+	"Emperor Palpatine",
+	"Darth Maul",
+	"Count Dooku",
+	"Kylo Ren",
+	"Asajj Ventress",
+	"Savage Opress",
+	"Darth Bane",
+	"Darth Revan",
+];
+
+export const others = [
+	"Jar Jar Binks",
+	"Wicket",
+	"Mon Mothma",
+	"Admiral Ackbar",
+	"Saw Gerrera",
+	"Maz Kanata",
+	"Jabba the Hutt",
+];
